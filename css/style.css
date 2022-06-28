@@ -1,0 +1,154 @@
+:root {
+  /* Primary */
+  --cor-p1: hsl(0, 78%, 62%);
+  --cor-p2: hsl(180, 62%, 55%);
+  --cor-p3: hsl(34, 97%, 64%);
+  --cor-p4: hsl(212, 86%, 64%);
+
+  /* Neutral */
+  --cor-0: hsl(234, 12%, 34%);
+  --cor-1: hsl(229, 6%, 66%);
+  --cor-2: hsl(0, 0%, 98%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--cor-2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1 {
+  font-weight: 200;
+  color: var(--cor-0);
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.container h1 > span {
+  font-weight: 600;
+  display: block;
+  color: var(--cor-0);
+}
+
+.container p {
+  font-size: 1.125rem;
+  color: var(--cor-1);
+  max-width: 55ch;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-item {
+  padding: 20px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border-top: 4px solid var(--cor-p2);
+  display: grid;
+}
+
+.grid-item h2 {
+  font-weight: 600;
+  color: var(--cor-0);
+}
+
+.grid-item p {
+  font-size: 1rem;
+  text-align: start;
+  max-width: 35ch;
+}
+
+.grid-item img {
+  justify-self: end;
+}
+
+.cyan {
+  border-top: 4px solid var(--cor-p2);
+  grid-row: 1/4;
+  align-self: center;
+}
+
+.red {
+  border-top: 4px solid var(--cor-p1);
+}
+
+.orange {
+  border-top: 4px solid var(--cor-p3);
+  grid-column: 2;
+}
+
+.blue {
+  border-top: 4px solid var(--cor-p4);
+  grid-column: 3;
+  grid-row: 1/4;
+  align-self: center;
+}
+
+/* Footer */
+.attribution {
+  font-size: 0.825rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cyan,
+  .red,
+  .orange,
+  .blue {
+    grid-row: initial;
+    grid-column: initial;
+    align-self: stretch;
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+}
